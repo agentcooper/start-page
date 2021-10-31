@@ -5,7 +5,7 @@
 
     <style>
       body {
-        padding: 1em;
+        padding: 0 1em;
         background-color: rgb(250, 250, 250);
         font-family: -apple-system;
         color: #333;
@@ -28,49 +28,97 @@
       code > span {
         margin-right: 0.2em;
       }
+
+      #wrapper {
+        display: grid;
+        grid-template-columns: 400px 400px;
+      }
+
+      .badge {
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        padding: 8px;
+
+        background: #fff;
+        border: 2px solid #666;
+        color: #666;
+        text-align: center;
+
+        font: 32px Arial, sans-serif;
+      }
     </style>
+
+    <script src="main.js"></script>
   </head>
 
   <body>
-    <form action="http://maps.google.com" method="GET">
-      <input type="text" name="q" value="" placeholder="Search Google Maps" />
-    </form>
+    <div id="wrapper">
+      <div>
+        <h2>Search</h2>
+        <form action="http://maps.google.com" method="GET">
+          <input
+            type="text"
+            name="q"
+            value=""
+            placeholder="Search Google Maps"
+          />
+        </form>
 
-    <form action="https://translate.google.com" method="GET">
-      <input type="hidden" name="sl" value="en" />
-      <input type="hidden" name="tl" value="ru" />
-      <input type="hidden" name="op" value="translate" />
-      <input type="text" name="text" value="" placeholder="Translate EN → RU" />
-    </form>
+        <form action="https://translate.google.com" method="GET">
+          <input type="hidden" name="sl" value="en" />
+          <input type="hidden" name="tl" value="ru" />
+          <input type="hidden" name="op" value="translate" />
+          <input
+            type="text"
+            name="text"
+            value=""
+            placeholder="Translate EN → RU"
+          />
+        </form>
 
-    <form action="https://translate.google.com" method="GET">
-      <input type="hidden" name="sl" value="nl" />
-      <input type="hidden" name="tl" value="en" />
-      <input type="hidden" name="op" value="translate" />
-      <input type="text" name="text" value="" placeholder="Translate NL → EN" />
-    </form>
+        <form action="https://translate.google.com" method="GET">
+          <input type="hidden" name="sl" value="nl" />
+          <input type="hidden" name="tl" value="en" />
+          <input type="hidden" name="op" value="translate" />
+          <input
+            type="text"
+            name="text"
+            value=""
+            placeholder="Translate NL → EN"
+          />
+        </form>
 
-    <form action="https://www.youtube.com/results" method="GET">
-      <input
-        type="text"
-        name="search_query"
-        value=""
-        placeholder="Search YouTube"
-      />
-    </form>
+        <form action="https://www.youtube.com/results" method="GET">
+          <input
+            type="text"
+            name="search_query"
+            value=""
+            placeholder="Search YouTube"
+          />
+        </form>
 
-    <div class="shortcuts">
-      <h2>Shortcuts</h2>
-      <ul>
-        <li>
-          <code><span>⌘</span><span>L</span></code> – Select the Smart Search
-          field
-        </li>
-        <li>
-          <code><span>⇧</span><span>⌘</span><span>T</span></code> – Reopen the
-          last tab you closed
-        </li>
-      </ul>
+        <h2>Shortcuts</h2>
+        <div class="shortcuts">
+          <ul>
+            <li>
+              <code><span>⌘</span><span>L</span></code> – Select the Smart
+              Search field
+            </li>
+            <li>
+              <code><span>⇧</span><span>⌘</span><span>T</span></code> – Reopen
+              the last tab you closed
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <h2>Habits <img width="24" height="24" src="things.ico" /></h2>
+          <div id="habit-tasks" class="badge">0</div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
