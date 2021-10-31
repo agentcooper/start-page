@@ -1,3 +1,5 @@
+On macOS you can use [launchd](https://en.wikipedia.org/wiki/Launchd) to run scripts in the background.
+
 ```bash
 pip3 install -r requirements.txt
 
