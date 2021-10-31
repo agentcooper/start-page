@@ -1,9 +1,9 @@
-```
+```bash
 pip3 install -r requirements.txt
 
 mkdir -p ~/Library/LaunchAgents
 
-# fix the paths in things-server.plist first
+# adjust the absolute paths in things-server.plist first
 
 # load
 cp things-server.plist ~/Library/LaunchAgents/ && launchctl load -w ~/Library/LaunchAgents/things-server.plist
